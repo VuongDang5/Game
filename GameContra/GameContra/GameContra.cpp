@@ -6,14 +6,14 @@
 #include <sstream>
 #include <dinput.h>
 #include <windowsx.h>
-#include "C:\Code\Contra\GameContra\GameContra\GameGlobal.h"
-#include "C:\Code\Contra\GameContra\GameContra\GameTime.h"
-#include "C:\Code\Contra\GameContra\GameContra\Game.h"
+#include "C:\Code\Game\GameContra\GameContra\GameGlobal.h"
+#include "C:\Code\Game\GameContra\GameContra\GameTime.h"
+#include "C:\Code\Game\GameContra\GameContra\Game.h"
 
 using namespace std;
 
-#define WIN_NAME L"Game DirectX"
-#define WIN_TITLE L"Game DirectX"
+#define WIN_NAME L"Game Contra"
+#define WIN_TITLE L"Game Contra"
 #define SCREEN_WIDTH 600
 #define SCREEN_HEIGHT 600
 #define FPS 60
