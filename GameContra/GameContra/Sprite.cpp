@@ -76,6 +76,7 @@ void Sprite::InitWithSprite(const char* filePath, RECT sourceRect, int width, in
         &mImageInfo,
         NULL,
         &mTexture);
+
 }
 
 bool Sprite::isRect(RECT rect)
@@ -110,21 +111,21 @@ void Sprite::Draw(D3DXVECTOR3 position, RECT sourceRect, D3DXVECTOR2 scale, D3DX
     D3DXVECTOR2 scalingScenter = D3DXVECTOR2(inPosition.x, inPosition.y);
 
     if (position != D3DXVECTOR3())
-        inPosition = position;
+        inPosition = mPosition;
 
     if (isRect(sourceRect))
-        inSourceRect = sourceRect;
+        inSourceRect = mSourceRect;
 
     if (scale != D3DXVECTOR2())
-        inCcale = scale;
+        inCcale = mScale;
 
     if (transform != D3DXVECTOR2())
-        inTranslation = transform;
+        inTranslation = mTranslation;
 
     if (rotationCenter != D3DXVECTOR2())
-        inRotationCenter = rotationCenter;
+        inRotationCenter = mRotationCenter;
     else
-        mRotationCenter = D3DXVECTOR2(inPosition.x, inPosition.y);// cho phep quay giua hinh
+        inRotationCenter = D3DXVECTOR2(inPosition.x, inPosition.y);// cho phep quay giua hinh
 
     D3DXMatrixTransformation2D(&mMatrix, &scalingScenter, 0, &inCcale, &inRotationCenter,
         inRotation, &inTranslation);
@@ -136,8 +137,8 @@ void Sprite::Draw(D3DXVECTOR3 position, RECT sourceRect, D3DXVECTOR2 scale, D3DX
     D3DXVECTOR3 center = D3DXVECTOR3(mWidth / 2, mHeight / 2, 0);
 
     mSpriteHandler->Draw(mTexture,
-        &inSourceRect,
-        &center,
+        NULL,
+        NULL,
         &inPosition,
         D3DCOLOR_ARGB(200, 200, 200, 200)); // nhung pixel nao co mau trang se duoc to mau nay len
 

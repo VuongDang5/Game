@@ -32,7 +32,20 @@ void Game::Render()
 	//0x4866ff set mau cho surface
 	device->Clear(0, NULL, D3DCLEAR_TARGET, 0xe52b50, 0.0f, 0);
 
-	
+	{
+		device->BeginScene();
+
+		//bat dau ve
+		GameGlobal::GetCurrentSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
+
+		//draw here
+		sprite->Draw();
+
+		//ket thuc ve
+		GameGlobal::GetCurrentSpriteHandler()->End();
+
+		device->EndScene();
+	}
 
 	device->Present(0, 0, 0, 0);
 }

@@ -6,6 +6,7 @@
 #include <dinput.h>
 
 #include "GameTime.h"
+#include "KeyBoard.h"
 
 #define KEYBOARD_BUFFERD_SIZE 1024
 

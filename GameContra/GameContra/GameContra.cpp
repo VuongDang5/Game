@@ -134,10 +134,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
 
     case WM_KEYDOWN:
-
+        KeyBoard::getInstace()->onKeyPressed(wParam);
         break;
-
     case WM_KEYUP:
+        KeyBoard::getInstace()->onKeyReleased(wParam);
+        break;
 
 
     default:
